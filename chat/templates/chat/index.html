@@ -1,1 +1,28 @@
-//index
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Chat app</title>
+  </head>
+  <body>
+    <div class="field">
+      <label>Room name</label>
+      <input type="text" id="room-name"  placeholder="Enter room name...">
+    </div>
+    <div class="field">
+      <label>User name</label>
+      <input type="text" id="user-name"  placeholder="Enter username...">
+    </div>
+    <button type="button" name="button" id="room-name-submit">Submit</button>
+
+    <script type="text/javascript">
+        document.querySelector('#room-name-submit').onclick = function(e){
+
+          var room = document.querySelector('#room-name').value;
+          var user = document.querySelector('#user-name').value;
+
+          window.location.replace(room + '/?username=' + user);
+        };
+    </script>
+  </body>
+</html>
