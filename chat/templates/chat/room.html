@@ -2,32 +2,25 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Chat app</title>
+    <title>Chat</title>
   </head>
   <body>
-
-    <form action="." method="post">
-      {% csrf_token %}
-      {{form.as_p}}
-      <input type="submit" value="Submit">
-    </form>
     <div class="field">
-      <label>Room name</label>
-      <input type="text" id="room-name"  placeholder="Enter room name...">
-    </div>
-    <div class="field">
-      <label>User name</label>
+      <h1>{{room_name}}</h1>
+      <label>Please enter your user name</label>
       <input type="text" id="user-name"  placeholder="Enter username...">
     </div>
     <button type="button" name="button" id="room-name-submit">Submit</button>
 
     <script type="text/javascript">
+
+        var roomName = '{{room_name}}'
+
         document.querySelector('#room-name-submit').onclick = function(e){
 
-          var room = document.querySelector('#room-name').value;
           var user = document.querySelector('#user-name').value;
 
-          window.location.replace(room + '/?username=' + user);
+          window.location.replace(location.host + roomName);
         };
     </script>
   </body>
